@@ -219,7 +219,7 @@
 .flex-child {
   background-color: aliceblue;
   border: 1px solid black;
-  height: 80vh;
+  /* height: 20vh; */
   width: 100vw;
 }
 
@@ -320,4 +320,23 @@
   text-align: center;
   height: 30px;
   width: 70px;
+}
+
+.button-enabled {
+  background: rgb(251, 123, 144);
+  border-radius: 5px;
+  border: 1px solid black;
+  color: rgb(252, 26, 64);
+  height: 40px;
+  width: 100px;
+}
+
+.button-disabled {
+  background: rgb(254, 208, 216);
+  border-radius: 5px;
+  border: none;
+  color: pink;
+  opacity: 0.3;
+  height: 40px;
+  width: 100px;
 }

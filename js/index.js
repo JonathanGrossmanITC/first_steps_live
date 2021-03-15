@@ -96,27 +96,102 @@ console.log(newNumber);
 // console.log(typeof newBoolean);
 // console.log(typeof newString);
 
-if (newBoolean === true) {
-  console.log("dinner is ready");
-}
+// if (newBoolean === true) {
+//   console.log("dinner is ready");
+// }
 
-if (10 > 9) {
-  console.log(10 > 9);
-}
+// if (10 > 9) {
+//   console.log(10 > 9);
+// }
 
 // Using index position with a array
-const thisArray = ["one", "two", "three", "four"];
-const two = thisArray[1];
-const lastItem = thisArray[thisArray.length - 1];
-console.log(two);
-console.log(lastItem);
+// const thisArray = ["one", "two", "three", "four"];
+// const two = thisArray[1];
+// const lastItem = thisArray[thisArray.length - 1];
+// console.log(two);
+// console.log(lastItem);
 
-const regularSentence = "Hi there, everybody. I am a sentence.";
+// const regularSentence = "Hi there, everybody. I am a sentence.";
 
-for (i = 0; i < regularSentence.length; i++) {
-  if (regularSentence[i] === "e") {
-    console.log(i);
-  } else {
-    console.log(regularSentence[i]);
+// for (i = 0; i < regularSentence.length; i++) {
+//   if (regularSentence[i] === "e") {
+//     console.log(i);
+//   } else {
+//     console.log(regularSentence[i]);
+//   }
+// }
+
+// Live Code Day 6
+const imagesArray = [
+  "terry_crews_one.jpeg",
+  "terry_crews_two.jpeg",
+  "terry_crews_three.jpeg",
+];
+const prevButton = document.getElementById("prevButton");
+const nextButton = document.getElementById("nextButton");
+const image = document.getElementById("largeImage");
+
+let index = 0;
+
+image.src = "./images/" + imagesArray[index]; // ./image/terry_crews_one.jpeg
+console.log("enabled", prevButton.enabled);
+const toggleDisabled = () => {
+  if (index === 0) {
+    prevButton.disabled = true;
+    nextButton.disabled = false;
+
+    prevButton.classList.remove("button-enabled");
+    prevButton.classList.add("button-disabled");
+
+    nextButton.classList.remove("button-disabled");
+    nextButton.classList.add("button-enabled");
+  } else if (index === imagesArray.length - 1) {
+    prevButton.disabled = false;
+    nextButton.disabled = true;
+
+    prevButton.classList.add("button-enabled");
+    prevButton.classList.remove("button-disabled");
+
+    nextButton.classList.add("button-disabled");
+    nextButton.classList.remove("button-enabled");
   }
-}
+};
+
+const moveBack = () => {
+  console.log("move back");
+  index--;
+  image.src = "./images/" + imagesArray[index];
+  // Check whether index is equal to the index position of the first item in our array
+  // Implemented this before using the toggleDisable()
+  // if (nextButton.disabled !== false) {
+  //   nextButton.disabled = false;
+  // }
+
+  toggleDisabled();
+  if (index === 0) {
+    // Disable the previous button because no more items after it
+    prevButton.disabled = true;
+  }
+};
+
+const moveForward = () => {
+  // console.log("move forward");
+  index++;
+  // console.log(index);
+  image.src = "./images/" + imagesArray[index];
+  // The array.length - 1 is always the last item in the array
+  // Check whether index is equal to the index position of the last item in our array
+
+  // Implemented this before using the toggleDisable()
+  // if (prevButton.disabled !== false) {
+  //   prevButton.disabled = false;
+  // }
+  toggleDisabled();
+  if (index === imagesArray.length - 1) {
+    // Disable the next button because no more items after it
+    nextButton.disabled = true;
+  }
+};
+
+prevButton.addEventListener("click", moveBack);
+nextButton.addEventListener("click", moveForward);

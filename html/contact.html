@@ -6,7 +6,7 @@
   </head>
   <body>
     <h1 id="title">Contact</h1>
-    <div class="flex-wrapper">
+    <div id="flexWrapper" class="flex-wrapper">
       <div class="flex-child flex-child-and-parent">
         <div class="flex-grandchild">A</div>
         <div class="flex-grandchild-middle">B</div>
@@ -15,8 +15,18 @@
       <div class="flex-child">
         <div>contact form</div>
         <div class="form">
-          <input type="text" class="text-input" placeholder="First name" />
-          <input type="text" class="text-input" placeholder="Last name" />
+          <input
+            id="firstName"
+            type="text"
+            class="text-input"
+            placeholder="First name"
+          />
+          <input
+            id="lastName"
+            type="text"
+            class="text-input"
+            placeholder="Last name"
+          />
           <input type="file" class="file-input" />
           <input type="radio" class="radio-lady" />
           <input type="radio" class="radio-gaga" />
