@@ -12,7 +12,7 @@
 // Here are examples:
 // -- Get an existing HTML element and read its attributes
 // const title = document.getElementById("title");
-const submitButton = document.getElementById("submitButton");
+// const submitButton = document.getElementById("submitButton");
 // console.log(title);
 // console.log(submitButton);
 
@@ -106,34 +106,78 @@ const submitButton = document.getElementById("submitButton");
 // Live Coding Tasks
 const firstName = document.getElementById("firstName");
 const lastName = document.getElementById("lastName");
-let firstValue = firstName.value;
+const file = document.getElementById("file");
+const radio = document.getElementById("radio");
+const submitButton = document.getElementById("submitButton");
+const formWrapper = document.getElementById("form");
+submitButton.disabled = true; // disables button on page load
 
 const sendForm = () => {
-  // const title = document.getElementById("title");
-  // title.textContent = "My Contact Information";
-  console.log("firstValue", firstValue);
-  console.log("First Name: ", firstName.value);
-  console.log("Last Name: ", lastName.value);
+  // This is one approach . . .
+  // if (
+  //   firstName.value === "" ||
+  //   lastName.value === "" ||
+  //   file.value === "" ||
+  //   radio.checked === false
+  // ) {
+  //   console.log("Your form is incomplete");
+  // } else {
+  //   console.log("Your form is COMPLETE!");
+  //   console.log("First Name: ", firstName.value);
+  //   console.log("Last Name: ", lastName.value);
+  //   console.log("File: ", file.value);
+  //   console.log("Radio: ", radio.checked);
+  // }
+  // This is another approach . . .
+  if (firstName.value && lastName.value && file.value && radio.checked) {
+    // Make form look completed
+    formWrapper.classList.add("form-completed");
+    formWrapper.classList.remove("form");
+
+    // Prints form values to console
+    console.log("Your form is COMPLETE!");
+    console.log("First Name: ", firstName.value);
+    console.log("Last Name: ", lastName.value);
+    console.log("File: ", file.value);
+    console.log("Radio: ", radio.checked);
+  } else if (firstName.value || lastName.value || file.value || radio.checked) {
+    // code goes below
+    console.log("Something is missing, but off to a good start.");
+  } else {
+    console.log("Your form is totally incomplete.");
+  }
 };
 
 submitButton.addEventListener("click", sendForm);
 
 const formInput = () => {
   console.log("typing...");
-  console.log(submitButton.disabled);
-  if (submitButton.disabled === false) {
-    // alert("Whoa buddy, it's false");
-    const title = document.getElementById("title");
-    title.textContent = "Jeremy, for the win.";
-    submitButton.disabled = true;
-  } else if (submitButton.disabled === true) {
-    // alert("Zecharia, for the win.");
-    console.log(firstName.value + " " + lastName.value);
+  // Checks if form is complete
+  if (firstName.value && lastName.value && file.value && radio.checked) {
+    // Enable submit button
     submitButton.disabled = false;
+    // Can also add and remove items from the submitButton classList
+  } else {
+    // Disable submit button
+    submitButton.disabled = true;
+    // Can also add and remove items from the submitButton classList
   }
+  // console.log(submitButton.disabled);
+  // if (submitButton.disabled === false) {
+  //   // alert("Whoa buddy, it's false");
+  //   const title = document.getElementById("title");
+  //   title.textContent = "Jeremy, for the win.";
+  //   submitButton.disabled = true;
+  // } else if (submitButton.disabled === true) {
+  //   // alert("Zecharia, for the win.");
+  //   console.log(firstName.value + " " + lastName.value);
+  //   submitButton.disabled = false;
+  // }
   // console.log("First Name: ", firstName.value);
   // console.log("Last Name: ", lastName.value);
 };
 
 firstName.addEventListener("input", formInput);
 lastName.addEventListener("input", formInput);
+file.addEventListener("input", formInput);
+radio.addEventListener("input", formInput);

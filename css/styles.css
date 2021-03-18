@@ -266,6 +266,10 @@
   position: relative;
 }
 
+.form-completed {
+  background-color: green;
+}
+
 .text-input {
   margin: 10px;
   width: 200px;
