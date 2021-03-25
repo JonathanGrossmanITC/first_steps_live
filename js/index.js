@@ -172,6 +172,7 @@ const moveBack = () => {
     // Disable the previous button because no more items after it
     prevButton.disabled = true;
   }
+  return "hi guys";
 };
 
 const moveForward = () => {

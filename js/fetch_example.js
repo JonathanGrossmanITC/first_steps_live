@@ -69,15 +69,15 @@ fetch(catURL)
   });
 
 const gitHubURL = "https://api.github.com/users/JonathanGrossmanITC/followers";
-
-fetch(gitHubURL)
-  .then((response) => response.json())
-  .then((data) => {
-    const navbar = document.getElementById("navbar");
-    for (let i = 0; i < data.length; i++) {
-      const newElement = document.createElement("div");
-      newElement.textContent = data[i]["login"];
-      newElement.id = data[i]["login"];
-      navbar.append(newElement);
-    }
-  });
+console.log(fetch(gitHubURL));
+// fetch(gitHubURL)
+//   .then((response) => response.json())
+//   .then((data) => {
+//     const navbar = document.getElementById("navbar");
+//     for (let i = 0; i < data.length; i++) {
+//       const newElement = document.createElement("div");
+//       newElement.textContent = data[i]["login"];
+//       newElement.id = data[i]["login"];
+//       navbar.append(newElement);
+//     }
+//   });
