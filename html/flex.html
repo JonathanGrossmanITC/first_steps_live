@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/flex.css" />
+    <title>Flex Demo</title>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <div class="navbar-wrapper">
+        <div class="left-nav-container">
+          <div class="navbar-item">1</div>
+          <div class="navbar-item">2</div>
+        </div>
+        <div class="right-nav-container">
+          <div class="navbar-item">📧</div>
+          <div class="navbar-item-top">☎</div>
+          <div class="navbar-item">🏠</div>
+        </div>
+      </div>
+      <div class="main-wrapper">
+        <div class="form-wrapper">
+          <input
+            class="form-input"
+            type="text"
+            id="firstName"
+            placeholder="First Name"
+          />
+          <input
+            class="form-input"
+            type="text"
+            id="lastName"
+            placeholder="Last Name"
+          />
+          <div class="checkbox-wrapper">
+            <input class="form-input" type="checkbox" id="accept" checked />
+            <span>Agree?</span>
+          </div>
+
+          <input class="form-input" type="file" id="file" />
+          <button class="form-button" disabled>Submit</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

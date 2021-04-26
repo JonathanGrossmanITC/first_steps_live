@@ -208,3 +208,11 @@ animation-iteration-count
 animation-direction
 
 animation-fill-mode */
+
+.flex-wrapper {
+  background-color: red;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
