@@ -8,7 +8,7 @@
     <title>Flex Demo</title>
   </head>
   <body>
-    <div class="page-wrapper">
+    <div class="">
       <div class="navbar-wrapper">
         <div class="left-nav-container">
           <div id="contactButton" class="navbar-item">1</div>
@@ -20,6 +20,14 @@
           <div class="navbar-item">🏠</div>
         </div>
       </div>
+    </div>
+
+    <div>
+      <img id="image" src="../images/fish_icon.png" class="image" />
+      <button id="previousButton" disabled>Previous</button>
+      <button id="nextButton">Next</button>
+    </div>
+    <div class="page-wrapper">
       <div class="main-wrapper">
         <div class="form-wrapper">
           <input
@@ -35,15 +43,16 @@
             placeholder="Last Name"
           />
           <div class="checkbox-wrapper">
-            <input class="form-input" type="checkbox" id="accept" checked />
+            <input class="form-input" type="checkbox" id="checkbox" />
             <span>Agree?</span>
           </div>
 
-          <input class="form-input" type="file" id="file" />
-          <button class="form-button" disabled>Submit</button>
+          <input class="form-input" type="file" id="fileInput" />
+          <button id="submitButton" class="form-button" disabled>Submit</button>
         </div>
       </div>
     </div>
     <script src="../js/flex.js"></script>
+    <script src="../js/dom.js"></script>
   </body>
 </html>
