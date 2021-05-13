@@ -37,6 +37,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 
   /* flex-child */
   flex-grow: 2;
@@ -88,4 +89,21 @@ body {
   border-radius: 50%;
   display: block;
   width: 100px;
+}
+
+.joke {
+  margin: 10px 0;
+}
+
+.joke-setup {
+  font-size: 18px;
+}
+
+.joke-punchline {
+  font-weight: 900;
+}
+
+.dog-photo {
+  border-radius: 10px;
+  width: 30%;
 }
