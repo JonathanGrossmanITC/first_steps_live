@@ -1,23 +1,30 @@
 .title {
-  color: blue;
-  text-transform: capitalize;
+  background-color: red;
 }
 
-.quotes-wrapper {
-  /* display: flex; */
+.image {
+  height: 80px;
 }
 
-.quote-item {
-  display: flex;
-  flex-direction: column;
-  margin: 30px;
+.link {
+  color: red;
+  text-align: center;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 10px;
+  margin: 5px;
 }
 
-.quote {
-  cursor: pointer;
-  font-size: 18px;
+.disabled-button {
+  background-color: lightgrey;
+  border: none;
+  border-radius: 5px;
+  color: gray;
 }
 
-.author {
-  font-weight: 900;
+.enabled-button {
+  background-color: green;
+  border: 1px solid black;
+  border-radius: 5px;
+  color: white;
 }
