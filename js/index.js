@@ -1,1 +1,1 @@
-"javascript";
+console.log(document.getElementById("navbar"));

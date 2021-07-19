@@ -37,10 +37,6 @@
   border-radius: 50%;
 }
 
-.form-wrapper {
-  margin: 40px 5px;
-}
-
 .navbar {
   width: 100%;
   text-align: end;
@@ -68,13 +64,23 @@
   padding: 3px;
 }
 
+.form-wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
 .input {
+  align-self: stretch;
   background-color: darkgray;
   border: none;
   border-radius: 10px;
   color: white;
   font-size: 16px;
   padding: 10px 15px;
+  margin: 10px 0;
   outline: none;
 }
 
@@ -120,6 +126,7 @@
   border-radius: 5px;
   color: gray;
   padding: 5px 10px;
+  margin: 5px;
 }
 
 .disabled-button:hover {
@@ -133,11 +140,101 @@
   color: white;
   cursor: pointer;
   padding: 5px 10px;
-  margin: 0 10px;
+  margin: 5px;
   transition: background-color 1s ease-out 1s, transform 1s;
 }
 
 .enabled-button:hover {
   background-color: darkgreen;
   transform: scale(1.2);
+}
+
+.about-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  background-color: black;
+  margin: 50px 0;
+}
+
+.about-section {
+  display: flex;
+
+  background-color: lightblue;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+}
+
+.about-section-right {
+  /* flex parent (see about-section) */
+  flex-direction: column-reverse;
+  align-items: flex-start;
+
+  /* flex child */
+  align-self: flex-end;
+
+  /* design */
+  width: 200px;
+}
+
+.about-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: white;
+  margin: 5px;
+  padding: 5px;
+}
+
+.about-item-circle {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+}
+
+@keyframes rollBall {
+  from {
+    transform: translate(0, 0);
+    background-color: white;
+  }
+  to {
+    /* align-self: flex-start; */
+    transform: translate(150px, 30px);
+    background-color: red;
+  }
+}
+
+.about-item-circle-roll {
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  animation: rollBall 2s;
+}
+
+.about-item-wide {
+  border-radius: 20px;
+  flex-grow: 2;
+}
+
+.about-item-wide-rotate {
+  align-self: stretch;
+
+  border-radius: 20px;
+  flex-grow: 2;
+  align-self: stretch;
+  transform: rotate(10deg);
+}
+
+.about-item-center {
+  align-self: center;
+}
+
+.about-item-right {
+  align-self: flex-end;
+}
+
+.about-section-form {
+  display: flex;
 }
