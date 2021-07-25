@@ -31,8 +31,18 @@
         </div>
         <div class="about-section about-section-form">
           <div class="form-wrapper">
-            <input type="text" placeholder="Favorite sport?" class="input" />
-            <input type="number" placeholder="0" class="input" />
+            <input
+              id="favoriteSport"
+              type="text"
+              placeholder="Favorite sport?"
+              class="input"
+            />
+            <input
+              id="numberInput"
+              type="number"
+              placeholder="0"
+              class="input"
+            />
             <input type="file" class="input" />
             <div>
               <input type="checkbox" />
@@ -40,12 +50,15 @@
             </div>
             <div>
               <button disabled="true" class="disabled-button">Disabled</button>
-              <button class="enabled-button">Enabled</button>
+              <button id="submitButton" class="disabled-button" disabled>
+                Submit
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <script src="./js/index.js"></script>
+    <!-- <script src="./js/index.js"></script> -->
+    <script src="../js/portfolio.js"></script>
   </body>
 </html>

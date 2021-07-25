@@ -1,5 +1,7 @@
 console.log("from the index file");
 
+console.log(document);
+
 // Variables
 
 // Variables require keywords: const, let, or var
@@ -9,7 +11,7 @@ console.log("from the index file");
 let somethingElse = "Israel Tech Challenge";
 // console.log(subtitle);
 
-subtitle = "ITC";
+somethingElse = "ITC";
 // console.log(subtitle);
 
 var otherSubtitle = "Israel";
