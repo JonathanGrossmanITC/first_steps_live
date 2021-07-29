@@ -238,3 +238,7 @@
 .about-section-form {
   display: flex;
 }
+
+.image {
+  height: 100px;
+}

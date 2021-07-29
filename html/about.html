@@ -1,3 +1,36 @@
+<!-- challenge 1 
+    in about html file
+-- put an iframe and two buttons
+-- disable the previous button
+
+    in the javascript file
+-- console log the three elements 
+-- create an array of google maps locations https://www.google.com/maps (e.g,
+const loctionsArray = ["https://www.google.com/maps",
+"https://www.google.com/maps"])-->
+
+<!-- challenge 2
+in js file:
+ -- create a variable named i (think about how we'll use the variable; hint, it's named i)
+ -- set i = 0
+ -- add an event listener to each button
+ -- each button should have its own function definition for the event listener
+ -- from each function, when its button is clicked, have it console log the iframe's src value
+    and also i
+ -- also when the buttons are clicked, before the console log, changed the value of i in the 
+    direction of the button -->
+
+<!-- challenge 3 
+    stop the previous button from moving below zero
+    (already prevented next from going up and enabled previous and next when required)
+    -->
+
+<!-- challenge 4 
+     -- console log the array item at the index position i each time a button is clicked
+     -- i should be the new i -->
+<!-- challenge 5
+-- make the map change when the user clicks the buttons -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,60 +38,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/styles.css" />
-    <title>About</title>
+    <title>Document</title>
   </head>
   <body>
-    <div class="navbar">
-      <a class="link" href="./about.html">About</a>
-      <a class="link" href="../index.html">Home</a>
-    </div>
     <div class="page-wrapper">
-      <div class="title-wrapper">
-        <h1 class="title">About</h1>
-        <h2 class="subtitle">learn about</h2>
+      <div>
+        <!-- <img id="mapIframe" src="../images/fish_icon.png" class="image" /> -->
+        <iframe
+          id="mapIframe"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108169.91309754904!2d34.727205132137996!3d32.08791223237148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4ca6193b7c1f%3A0xc1fb72a2c0963f90!2sTel%20Aviv-Yafo!5e0!3m2!1sen!2sil!4v1626108333315!5m2!1sen!2sil"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
       </div>
 
-      <div class="about-wrapper">
-        <div class="about-section">
-          <div class="about-item about-item-circle">A</div>
-          <div class="about-item about-item-wide">B</div>
-          <div class="about-item about-item-circle">C</div>
-        </div>
-        <div class="about-section about-section-right">
-          <div class="about-item about-item-center about-item-circle">D</div>
-          <div class="about-item about-item-wide-rotate">E</div>
-          <div class="about-item about-item-circle-roll">F</div>
-        </div>
-        <div class="about-section about-section-form">
-          <div class="form-wrapper">
-            <input
-              id="favoriteSport"
-              type="text"
-              placeholder="Favorite sport?"
-              class="input"
-            />
-            <input
-              id="numberInput"
-              type="number"
-              placeholder="?"
-              class="input"
-            />
-            <input id="file" type="file" class="input" />
-            <div>
-              <input type="checkbox" />
-              <span>Coming?</span>
-            </div>
-            <div>
-              <button disabled="true" class="disabled-button">Disabled</button>
-              <button id="submitButton" class="disabled-button" disabled="true">
-                Submit
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <button id="prevButton">Previous</button>
+      <button id="nextButton">Next</button>
     </div>
-    <!-- <script src="./js/index.js"></script> -->
-    <script src="../js/portfolio.js"></script>
+    <script src="../js/maps.js"></script>
   </body>
 </html>
