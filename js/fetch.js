@@ -1,81 +1,49 @@
-const gitHubApi = "https://api.github.com/users/JonathanGrossmanITC";
+// Asynchronous blocks of code return a Promise
+// fetch is an asynchronous block of code
+// fetch returns a Promise
+// *** A Promise is a value that does not yet exist *** //
 
-// // Fetch function returns a Promise
-// // A Promise is a placeholder for a value that does not yet exist
+const getInfoButton = document.getElementById("getInfoButton");
 
-// // console.log(fetch(gitHubApi));
+const usersArray = [
+  "JonathanGrossmanITC",
+  "bmhassid",
+  "barrykuts",
+  "rubintats",
+  "otherNameHere",
+];
 
-// console.log("Before the fetch");
+const url = "https://api.github.com/users/";
 
-// fetch(gitHubApi)
-//   .then((response) => response.json())
-//   .then((data) => {
-//     console.log(data);
-//     console.log(data["avatar_url"]);
-//     console.log(data["login"]);
-//     console.log("from inside the Promise");
+// Example of a Promise in the console.
+// const response = fetch(url);
+// console.log(response);
 
-//     // DOM Manipulations
-//     // For instance, get an element by its ID
-//     // Set that element's textContent or src value (for an image)
-//   });
+const getUserInfo = () => {
+  for (let i = 0; i <= usersArray.length - 1; i++) {
+    fetch(url + usersArray[i])
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        const dogApi = "https://dog.ceo/api/breeds/image/random";
+        fetch(dogApi)
+          .then((response) => response.json())
+          .then((dogData) => {
+            const myName = document.getElementById(usersArray[i]);
+            myName.textContent = data["login"];
 
-// console.log("After the fetch");
+            const userPhoto = document.getElementById("photo" + usersArray[i]);
+            userPhoto.src = data["avatar_url"];
 
-let dogCEOUrl = "https://dog.ceo/api/breeds/image/random";
+            const dogPhoto = document.getElementById("dog" + usersArray[i]);
+            //   dogPhoto.src = dogData["message"];
+            dogPhoto.src = dogData.message;
 
-// console.log(fetch(dogCEOUrl));
-
-// The fetch function returns a Promise
-// A Promise - a placeholder for a value that does not yet exist
-
-// (response) => response.json();
-
-console.log(fetch(dogCEOUrl));
-console.log("Before the fetch");
-
-fetch(dogCEOUrl)
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data["message"]);
-
-    const dogPhoto = document.getElementById("dogPhoto");
-    console.log(dogPhoto);
-    dogPhoto.src = data["message"];
-
-    console.log("from inside the Promise");
-  });
-
-console.log("After the fetch");
-
-const jokesUrl = "https://official-joke-api.appspot.com/random_ten";
-const jokesButton = document.getElementById("jokesButton");
-
-const getJokes = () => {
-  fetch(jokesUrl)
-    .then((response) => response.json())
-    .then((data) => {
-      const jokesWrapper = document.getElementById("jokesWrapper");
-      console.log(data);
-
-      for (let i = 0; i < data.length; i++) {
-        const joke = document.createElement("div");
-        joke.classList.add("joke");
-
-        const jokeSetup = document.createElement("div");
-        jokeSetup.textContent = data[i]["setup"];
-        jokeSetup.id = data[i]["setup"];
-        jokeSetup.classList.add("joke-setup");
-
-        const jokePunchline = document.createElement("div");
-        jokePunchline.textContent = data[i]["punchline"];
-        jokePunchline.id = data[i]["punchline"];
-        jokePunchline.classList.add("joke-punchline");
-
-        joke.append(jokeSetup, jokePunchline);
-        jokesWrapper.append(joke);
-      }
-    });
+            console.log(dogData);
+          });
+      });
+  }
 };
 
-jokesButton.addEventListener("click", getJokes);
+getInfoButton.addEventListener("click", getUserInfo);
