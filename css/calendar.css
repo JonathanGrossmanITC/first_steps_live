@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+}
+
+.title {
+  color: rgb(1, 145, 1);
+  font-size: 36px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin: 0 0 0 5px;
+}
+
+.page-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 0;
+}
+
+.calendar-wrapper {
+  display: flex;
+  align-items: flex-start;
+
+  background-color: lightgreen;
+  border-radius: 10px;
+  height: 400px;
+  margin: 40px;
+  width: 700px;
+}
+
+.day-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  background-color: lightgray;
+  border-radius: 5px;
+  margin: 20px;
+  padding: 10px;
+}
+
+.date {
+  margin: 0 0 20px 0;
+}
