@@ -1,56 +1,121 @@
 body {
-  background-color: aliceblue;
-  padding: 20px;
-}
-
-h1 {
-  margin: 0;
-  font-family: cursive;
-  font-weight: 900;
-  color: yellowgreen;
-}
-
-h2 {
-  color: yellowgreen;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  font-weight: 100;
   margin: 0;
 }
 
-.sidebar-section {
-  background-color: yellowgreen;
+.page-wrapper {
+  background-color: red;
+}
+
+.sidebar {
+  background-color: blue;
   position: fixed;
-  top: 0px;
-  left: 0px;
-  bottom: 0px;
-  width: 140px;
-  padding: 10px 0px 0px 10px;
-  /* width: 100%; */
-  /* left: 0; */
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding: 10px;
+  width: 180px;
 }
 
-.main-section {
-  position: relative;
-  left: 150px;
+.section-wrapper {
+  background-color: yellow;
+  border: 1px solid black;
   height: 100vh;
-  width: 500px;
+  margin: 0 20px;
+  position: relative;
+  left: 200px;
+  width: calc(100% - 200px);
 }
 
-.main-image {
+.link-cards-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  /* flex-direction: column; */
+
+  background-color: blueviolet;
+  height: 900px;
+}
+
+.left-section {
+  display: flex;
+  height: 100%;
+}
+
+.left-section:hover {
+  color: pink;
+}
+
+.right-section {
+  display: flex;
+}
+
+.link-card {
+  margin: 10px;
+  padding: 5px 10px 10px 15px;
+  transition: width 3s;
+  width: 100px;
+}
+
+.link-card:hover {
+  background-color: red;
   border-radius: 50%;
-  height: 80px;
-  width: 80px;
+  width: 300px;
 }
 
-.one-link {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
+/* .left-card {
+  align-self: flex-end;
+  color: red;
+} */
+
+/* The animation code */
+@keyframes grow-big {
+  0% {
+    height: 55px;
+    width: 55px;
+  }
+  33% {
+    height: 60px;
+    width: 60px;
+  }
+  66% {
+    height: 65px;
+    width: 65px;
+  }
+  100% {
+    height: 85px;
+    width: 85px;
+  }
 }
 
-.two-link {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
+@keyframes change-color {
+  0% {
+    color: black;
+  }
+  33% {
+    color: blue;
+  }
+  66% {
+    color: red;
+  }
+  100% {
+    color: yellow;
+  }
+}
+
+.image {
+  height: 50px;
+  width: 50px;
+}
+
+.image:hover {
+  animation: grow-big 6s;
+}
+
+.image-text {
+  color: black;
+}
+
+.image-text:hover {
+  animation: change-color 6s;
 }
