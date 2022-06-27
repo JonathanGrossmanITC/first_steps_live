@@ -4,61 +4,33 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/styles.css" />
-    <title>About</title>
+    <title>Summertime</title>
+    <link rel="stylesheet" href="../css/index.css" />
   </head>
   <body>
-    <div class="navbar">
-      <a class="link" href="./about.html">About</a>
-      <a class="link" href="../index.html">Home</a>
+    <div class="sidebar">
+      <img src="../images/street.png" class="image" />
     </div>
     <div class="page-wrapper">
-      <div class="title-wrapper">
-        <h1 class="title">About</h1>
-        <h2 class="subtitle">learn about</h2>
-      </div>
-
-      <div class="about-wrapper">
-        <div class="about-section">
-          <div class="about-item about-item-circle">A</div>
-          <div class="about-item about-item-wide">B</div>
-          <div class="about-item about-item-circle">C</div>
-        </div>
-        <div class="about-section about-section-right">
-          <div class="about-item about-item-center about-item-circle">D</div>
-          <div class="about-item about-item-wide-rotate">E</div>
-          <div class="about-item about-item-circle-roll">F</div>
-        </div>
-        <div class="about-section about-section-form">
-          <div class="form-wrapper">
-            <input
-              id="favoriteSport"
-              type="text"
-              placeholder="Favorite sport?"
-              class="input"
-            />
-            <input
-              id="numberInput"
-              type="number"
-              placeholder="?"
-              class="input"
-            />
-            <input id="file" type="file" class="input" />
-            <div>
-              <input type="checkbox" />
-              <span>Coming?</span>
-            </div>
-            <div>
-              <button disabled="true" class="disabled-button">Disabled</button>
-              <button id="submitButton" class="disabled-button" disabled="true">
-                Submit
-              </button>
-            </div>
+      <div class="section-wrapper">
+        <div class="link-cards-wrapper">
+          <div class="left-section">
+            <a href="./about.html" class="link-card">About</a>
           </div>
+          <div class="right-section">
+            <a href="#" class="link-card">Contact</a>
+            <a href="./sign-in.html" class="link-card">Sign In</a>
+          </div>
+        </div>
+
+        <div class="form-wrapper">
+          <img src="../images/beach.png" class="form-image" />
+          <input type="text" class="form-input" placeholder="First Name" />
+          <input type="text" class="form-input" placeholder="Last Name" />
+          <input type="text" class="form-input" placeholder="Email" />
+          <div class="form-button">Submit</div>
         </div>
       </div>
     </div>
-    <!-- <script src="./js/index.js"></script> -->
-    <script src="../js/portfolio.js"></script>
   </body>
 </html>

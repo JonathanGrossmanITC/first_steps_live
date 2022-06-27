@@ -1,13 +1,14 @@
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .page-wrapper {
-  background-color: red;
+  background-color: yellowgreen;
 }
 
 .sidebar {
-  background-color: blue;
+  background-color: aliceblue;
   position: fixed;
   top: 0;
   left: 0;
@@ -17,24 +18,27 @@ body {
 }
 
 .section-wrapper {
-  background-color: yellow;
-  border: 1px solid black;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: 97vh;
+
+  background-color: white;
+
   margin: 0 20px;
   position: relative;
-  left: 200px;
-  width: calc(100% - 200px);
+  left: 190px;
+  padding: 10px;
+  width: calc(100% - 230px);
 }
 
 .link-cards-wrapper {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-
-  /* flex-direction: column; */
-
-  background-color: blueviolet;
-  height: 900px;
+  background-color: aliceblue;
+  width: 100%;
 }
 
 .left-section {
@@ -43,7 +47,7 @@ body {
 }
 
 .left-section:hover {
-  color: pink;
+  color: yellowgreen;
 }
 
 .right-section {
@@ -51,71 +55,49 @@ body {
 }
 
 .link-card {
+  border-bottom: 1px solid yellowgreen;
+  color: black;
   margin: 10px;
-  padding: 5px 10px 10px 15px;
-  transition: width 3s;
-  width: 100px;
+  padding: 5px;
+  text-decoration: none;
 }
 
-.link-card:hover {
-  background-color: red;
-  border-radius: 50%;
-  width: 300px;
-}
-
-/* .left-card {
-  align-self: flex-end;
-  color: red;
-} */
-
-/* The animation code */
-@keyframes grow-big {
-  0% {
-    height: 55px;
-    width: 55px;
-  }
-  33% {
-    height: 60px;
-    width: 60px;
-  }
-  66% {
-    height: 65px;
-    width: 65px;
-  }
-  100% {
-    height: 85px;
-    width: 85px;
-  }
-}
-
-@keyframes change-color {
-  0% {
-    color: black;
-  }
-  33% {
-    color: blue;
-  }
-  66% {
-    color: red;
-  }
-  100% {
-    color: yellow;
-  }
+.link-card:visited {
+  color: black;
 }
 
 .image {
-  height: 50px;
-  width: 50px;
-}
-
-.image:hover {
-  animation: grow-big 6s;
+  border-radius: 5px;
+  height: auto;
+  width: 100%;
 }
 
 .image-text {
   color: black;
 }
 
-.image-text:hover {
-  animation: change-color 6s;
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 500px;
+}
+
+.form-input {
+  margin: 5px 0;
+}
+
+.form-button {
+  background-color: aliceblue;
+  border-radius: 5px;
+  cursor: pointer;
+
+  padding: 10px;
+  margin: 5px;
+}
+
+.form-button:hover {
+  background-color: yellowgreen;
 }
