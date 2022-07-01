@@ -9,7 +9,15 @@
   </head>
   <body>
     <div class="sidebar">
-      <img src="../images/street.png" class="image" />
+      <img
+        src="../images/street.png"
+        id="sidebarImage"
+        class="image imageBig"
+      />
+      <div>
+        <button id="prevButton">Prev</button>
+        <button id="nextButton">Next</button>
+      </div>
     </div>
     <div class="page-wrapper">
       <div class="section-wrapper">
@@ -24,13 +32,28 @@
         </div>
 
         <div class="form-wrapper">
-          <img src="../images/beach.png" class="form-image" />
-          <input type="text" class="form-input" placeholder="First Name" />
-          <input type="text" class="form-input" placeholder="Last Name" />
-          <input type="text" class="form-input" placeholder="Email" />
-          <div class="form-button">Submit</div>
+          <input
+            type="text"
+            class="form-input"
+            id="firstNameInput"
+            placeholder="First Name"
+          />
+          <input
+            type="text"
+            class="form-input"
+            id="lastNameInput"
+            placeholder="Last Name"
+          />
+          <input
+            type="text"
+            class="form-input"
+            id="emailInput"
+            placeholder="Email"
+          />
+          <div class="form-button" id="submitButton">Submit</div>
         </div>
       </div>
     </div>
+    <script src="../js/index.js"></script>
   </body>
 </html>
