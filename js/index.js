@@ -1,17 +1,20 @@
-// Once something is saved in memory, you can interact with it in your JavaScript code
-// You can save any data type to a variable
-// Once something is saved as a variable, the variable represents that thing in memory, which means the variable can do the things that the underlying data is capable of
-// -- For instance, a number stored in a variable: you can add, subtract, multiply, divide and more using the variable
-// -- Another is example is a string stored in a variable: you can use that variable to set the text of an HTML element
-const changePhoto = () => {
-  sidebarImage.src = "./images/street.png";
-};
-
-const sidebarImage = document.getElementById("sidebarImage");
-sidebarImage.addEventListener("click", changePhoto);
-
-const addValue = (e) => {
-  console.log(e.target.value);
+const addValue = () => {
+  if (
+    firstNameInput.value !== "" &&
+    lastNameInput.value !== "" &&
+    emailInput.value !== ""
+  ) {
+    // if none of the inputs are empty, run this code
+    console.log("yes!");
+    submitButton.disabled = false;
+    submitButton.classList.add("form-button");
+    submitButton.classList.remove("form-button-disabled");
+  } else {
+    submitButton.disabled = true;
+    submitButton.classList.remove("form-button");
+    submitButton.classList.add("form-button-disabled");
+    // if any of the inputs are empty, do this stuff
+  }
 };
 
 const firstNameInput = document.getElementById("firstNameInput");
@@ -24,7 +27,6 @@ lastNameInput.addEventListener("input", addValue);
 
 const emailInput = document.getElementById("emailInput");
 emailInput.addEventListener("input", addValue);
-// console.log(emailInput);
 
 const submitForm = () => {
   const formObject = {
@@ -37,51 +39,21 @@ const submitForm = () => {
 
 const submitButton = document.getElementById("submitButton");
 submitButton.addEventListener("click", submitForm);
-console.log(submitButton);
 
-const photosArray = ["street.png", "beach.png", "summertime-legs.jpeg"];
+const sentenceHtml = document.getElementById("sentenceHtml");
+console.log(sentenceHtml);
 
-let counter = 0;
+let startingPhrase = "I'm going to the beach, and I am bringing";
+const arrayOfBeachThings = [
+  "towel",
+  "sunscreen",
+  "drinks",
+  "surfing board",
+  "snacks",
+];
 
-const moveBackwards = () => {
-  console.log("back");
-  if (counter > 0) {
-    counter--;
-    sidebarImage.src = "../images/" + photosArray[counter];
-  }
-};
-const moveForwards = () => {
-  console.log("forward");
-  if (counter < photosArray.length - 1) {
-    counter++;
-    sidebarImage.src = "../images/" + photosArray[counter];
-  }
-  // sidebarImage.classList.add("nameoftheclass");
-  // sidebarImage.classList.remove("nameoftheclass");
-};
+for (let i = 0; i <= arrayOfBeachThings.length - 1; i++) {
+  startingPhrase = startingPhrase + " " + arrayOfBeachThings[i];
+}
 
-const prevButton = document.getElementById("prevButton");
-prevButton.addEventListener("click", moveBackwards);
-
-const nextButton = document.getElementById("nextButton");
-nextButton.addEventListener("click", moveForwards);
-
-// const exampleObject = {
-//   first: "Joe",
-//   last: "Doe",
-//   birthday: "today",
-//   color: "blue",
-//   example_function: () => {
-//     console.log("hello");
-//   },
-// };
-
-// const exampleArray = ["", 0, 9];
-
-// const exampleString = "Birthday";
-// console.log(exampleString[4]);
-
-// console.log(exampleObject["birthday"]);
-// exampleObject.example_function();
-
-// console.log(Object.keys(exampleObject));
+sentenceHtml.textContent = startingPhrase;
