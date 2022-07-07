@@ -1,150 +1,53 @@
-const addValue = () => {
-  if (
-    firstNameInput.value !== "" &&
-    lastNameInput.value !== "" &&
-    emailInput.value !== ""
-  ) {
-    // if none of the inputs are empty, run this code
-    submitButton.disabled = false;
-    submitButton.classList.add("form-button");
-    submitButton.classList.remove("form-button-disabled");
-  } else {
-    submitButton.disabled = true;
-    submitButton.classList.remove("form-button");
-    submitButton.classList.add("form-button-disabled");
-    // if any of the inputs are empty, do this stuff
-  }
-};
+// const URL = "https://dog.ceo/api/breeds/image/random";
+const URL = "https://api.github.com/users/jonathangrossmanitc";
 
-const firstNameInput = document.getElementById("firstNameInput");
-firstNameInput.addEventListener("input", addValue);
-// console.log(firstNameInput);
+// console.log(fetch(URL).then((response) => response.json()));
 
-const lastNameInput = document.getElementById("lastNameInput");
-lastNameInput.addEventListener("input", addValue);
-// console.log(lastNameInput);
+// fetch(URL)
+//   .then((response) => response.json())
+//   .then((data) => {
+//     console.log(data);
+//   });
 
-const emailInput = document.getElementById("emailInput");
-emailInput.addEventListener("input", addValue);
-const submitForm = () => {
-  console.log("form");
-};
-const submitButton = document.getElementById("submitButton");
-submitButton.addEventListener("click", submitForm);
+fetch(URL)
+  .then((response) => response.json())
+  .then((data) => {
+    const sidebarImage = document.getElementById("sidebarImage");
+    sidebarImage.src = data.avatar_url;
 
-// ((userObj) => {
-//   console.log("Welcome to ITC, " + userObj.firstName + " " + userObj.lastName);
-//   return;
-// })();
+    const gitHubLink = document.getElementById("gitHubLink");
+    gitHubLink.textContent = "Come visit my code at " + data.login;
+    gitHubLink.href = data.html_url;
 
-// Example of arrow function
-const greetUser = (userFirstName) => {
-  const greeting = "Welcome to ITC, " + userFirstName;
-  console.log(greeting);
-  return greeting;
-};
+    console.log(data);
+  });
 
-const firstName = "josh";
+// setTimeout(() => {
+//   fetch(URL)
+//     .then((response) => response.json())
+//     .then((data) => {
+//       const sidebarImage = document.getElementById("sidebarImage");
+//       sidebarImage.src = data.message;
+//     });
+// }, 1000);
 
-const userGreeting = greetUser(firstName);
+// Example of POST REQUEST
+// fetch(URL, {
+//     method: "POST",
+//     body: JSON.stringify(data),
+//   }).then(...).then(...)
 
-console.log(userGreeting);
+fetch("https://api.jokes.one/jod")
+  .then((response) => response.json())
+  .then((data) => {
+    const jokeOfTheDay = document.getElementById("jokeOfTheDay");
+    jokeOfTheDay.textContent = data.contents.jokes[0].joke.text;
+    console.log(jokeOfTheDay);
+    console.log(data.contents.jokes[0].joke.text);
 
-// const currentUser = {
-//   lastName: lastNameInput.value,
-//   firstName: "joe",
-// };
+    const splitter = "A:";
+    const jokeArray = data.contents.jokes[0].joke.text.split(splitter);
 
-// greetUser(currentUser);
-
-// Example of function keyword function
-// function myFunction(a, b) {
-//   return a * b;
-// }
-
-// myFunction();
-
-const sendMessage = () => {
-  const message = "Hello World";
-  return message;
-};
-
-// sendMessage();
-
-const helloMessage = sendMessage();
-
-console.log(helloMessage);
-
-const multiplyNumbers = (num1, num2) => {
-  const productOfNums = num1 * num2;
-  return productOfNums;
-};
-
-const multipliedProduct = multiplyNumbers(10, 9);
-
-console.log(multipliedProduct);
-
-// const getSentenceHtml = () => {
-//   const sentenceHtml = document.getElementById("sentenceHtml");
-//   let startingPhrase = "I'm going to the beach, and I am bringing";
-//   const arrayOfBeachThings = [
-//     "towel",
-//     "sunscreen",
-//     "drinks",
-//     "surfing board",
-//     "snacks",
-//   ];
-//   for (let i = 0; i <= arrayOfBeachThings.length - 1; i++) {
-//     if (i === arrayOfBeachThings.length - 1) {
-//       startingPhrase = startingPhrase + " and " + arrayOfBeachThings[i] + ".";
-//     } else if (i === 0) {
-//       startingPhrase = startingPhrase + " a " + arrayOfBeachThings[i] + ", ";
-//     } else {
-//       startingPhrase = startingPhrase + " " + arrayOfBeachThings[i] + ",";
-//     }
-//   }
-//   sentenceHtml.textContent = startingPhrase;
-// };
-
-// const buildButton = document.getElementById("buildButton");
-// buildButton.addEventListener("click", getSentenceHtml);
-
-let startingPhrase = "I'm going to the beach, and I am bringing";
-const arrayOfBeachThings = [
-  "towel",
-  "sunscreen",
-  "drinks",
-  "surfing board",
-  "snacks",
-];
-
-let startingPhraseTwo = "I'm leaving the park, and I forgot my";
-const arrayOfBeachThingsTwo = ["sun glasses", "lip balm", "socks", "keys"];
-
-const getSentenceHtml = (phrase, arrayOfItems, htmlElement) => {
-  const sentenceHtml = document.getElementById(htmlElement);
-
-  for (let i = 0; i <= arrayOfItems.length - 1; i++) {
-    if (i === arrayOfItems.length - 1) {
-      phrase = phrase + " and " + arrayOfItems[i] + ".";
-    } else if (i === 0) {
-      phrase = phrase + " a " + arrayOfItems[i] + ", ";
-    } else {
-      phrase = phrase + " " + arrayOfItems[i] + ",";
-    }
-  }
-  sentenceHtml.textContent = phrase;
-};
-
-getSentenceHtml(startingPhrase, arrayOfBeachThings, "sentenceHtml");
-getSentenceHtml(startingPhraseTwo, arrayOfBeachThingsTwo, "sentenceHtmlTwo");
-
-const showingMoveConsoleTechn = (e) => {
-  const buttonText = e.target.textContent;
-  const revesedText = buttonText.split("").reverse().join("");
-  const upperReversedText = revesedText.toUpperCase();
-  console.log(upperReversedText);
-};
-
-const moveButton = document.getElementById("moveButton");
-moveButton.addEventListener("click", showingMoveConsoleTechn);
+    console.log(jokeArray[0]);
+    console.log(splitter + jokeArray[1]);
+  });
