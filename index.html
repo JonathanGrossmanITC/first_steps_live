@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Summertime Live</title>
     <link rel="stylesheet" href="./css/index.css" />
   </head>
   <body>
-    <div class="sidebar">
-      <img src="./images/beach.png" id="sidebarImage" class="image" />
-      <a href="#" id="gitHubLink"></a>
-    </div>
     <div class="page-wrapper">
-      <div class="section-wrapper">
-        <div class="link-cards-wrapper">
-          <div class="left-section">
-            <a href="./html/about.html" class="link-card">About</a>
-          </div>
-          <div class="right-section">
-            <a href="./html/contact.html" class="link-card">Contact</a>
-            <a href="./html/sign-in.html" class="link-card">Sign In</a>
-          </div>
+      <div class="navbar">navbar</div>
+      <div class="main-section">
+        <div class="main-card">
+          <img src="./images/street.png" class="image" />
+          <h2>Summertime</h2>
+          <h3>it's live</h3>
+          <div id="sentenceHTML"></div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108169.74093131749!2d34.72720550424106!3d32.088057675207395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4ca6193b7c1f%3A0xc1fb72a2c0963f90!2sTel%20Aviv-Yafo!5e0!3m2!1sen!2sil!4v1657560255980!5m2!1sen!2sil"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            class="main-map"
+            id="mainMap"
+          ></iframe>
+          <button id="previousButton" disabled class="disabled">Prev</button>
+          <button id="nextButton" class="enabled">Next</button>
         </div>
-        <div id="jokeCategories" class="joke-categories"></div>
-        <div id="displayJoke" class="display-joke"></div>
       </div>
-      <!-- <div class="section-wrapper">Section Wrapper</div> -->
     </div>
     <script src="./js/index.js"></script>
   </body>

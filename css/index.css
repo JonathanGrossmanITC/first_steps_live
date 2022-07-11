@@ -1,130 +1,45 @@
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.page-wrapper {
-  background-color: yellowgreen;
-}
-
-.sidebar {
-  background-color: aliceblue;
+.navbar {
   position: fixed;
   top: 0;
+  right: 0;
   left: 0;
-  bottom: 0;
-  padding: 10px;
-  width: 180px;
+
+  background-color: blue;
+  height: 30px;
 }
 
-.section-wrapper {
+.main-section {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-
-  height: 97vh;
-
-  background-color: white;
-
-  margin: 0 20px;
-  position: relative;
-  left: 190px;
-  padding: 10px;
-  width: calc(100% - 230px);
+  margin-top: 30px;
+  height: 90vh;
 }
 
-.link-cards-wrapper {
+.main-card {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: aliceblue;
-  width: 100%;
-}
-
-.left-section {
-  display: flex;
-  height: 100%;
-}
-
-.left-section:hover {
-  color: yellowgreen;
-}
-
-.right-section {
-  display: flex;
-}
-
-.link-card {
-  border-bottom: 1px solid yellowgreen;
-  color: black;
-  margin: 10px;
-  padding: 5px;
-  text-decoration: none;
-}
-
-.link-card:visited {
-  color: black;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: aqua;
+  height: 400px;
+  width: 300px;
 }
 
 .image {
-  border-radius: 5px;
+  border-radius: 10px;
   height: auto;
+  width: 150px;
+}
+
+.main-map {
   width: 100%;
 }
 
-.image-text {
-  color: black;
-}
-
-.form-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 500px;
-  width: 500px;
-}
-
-.form-input {
-  margin: 5px 0;
-}
-
-.form-button {
-  background-color: aliceblue;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  padding: 10px;
-  margin: 5px;
-}
-
-.form-button:hover {
-  background-color: yellowgreen;
-}
-
-.form-button-disabled {
-  background-color: aliceblue;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  margin: 5px;
-  opacity: 0.6;
-}
-
-.joke-categories {
-  display: flex;
-  flex-flow: wrap;
-}
-
-.category-button {
-  border: 1px solid red;
-  border-radius: 5px;
+.enabled {
   color: red;
-  margin: 10px 10px 0 0;
-  padding: 10px;
 }
 
-.display-joke {
-  color: red;
+.disabled {
+  color: gray;
 }

@@ -1,101 +1,93 @@
-// const URL = "https://dog.ceo/api/breeds/image/random";
-const URL = "https://api.github.com/users/jonathangrossmanitc";
+//
+//
+// SENTENCE SECTION
+//
+//
 
-// console.log(fetch(URL).then((response) => response.json()));
+// console.log("immediately");
 
-// fetch(URL)
-//   .then((response) => response.json())
-//   .then((data) => {
-//     console.log(data);
-//   });
+// const sentenceHTML = document.getElementById("sentenceHTML");
+// console.log(sentenceHTML);
 
-fetch(URL)
-  .then((response) => response.json())
-  .then((data) => {
-    const sidebarImage = document.getElementById("sidebarImage");
-    sidebarImage.src = data.avatar_url;
+// const arrayLanguages = [
+//   "Spanish",
+//   "French",
+//   "Hebrew",
+//   "Klingon",
+//   "Romanian",
+//   "Japanese",
+// ];
 
-    const gitHubLink = document.getElementById("gitHubLink");
-    gitHubLink.textContent = "Come visit my code at " + data.login;
-    gitHubLink.href = data.html_url;
+// let languagesSentence = "I speak";
 
-    console.log(data);
-  });
+// for (let i = 0; i < arrayLanguages.length; i++) {
+//   if (i === arrayLanguages.length - 1) {
+//     languagesSentence = languagesSentence + " and " + arrayLanguages[i] + ".";
+//   } else if (i === 0) {
+//     languagesSentence = languagesSentence + " " + arrayLanguages[i];
+//   } else {
+//     languagesSentence = languagesSentence + ", " + arrayLanguages[i];
+//   }
+// }
 
-// setTimeout(() => {
-//   fetch(URL)
-//     .then((response) => response.json())
-//     .then((data) => {
-//       const sidebarImage = document.getElementById("sidebarImage");
-//       sidebarImage.src = data.message;
-//     });
-// }, 1000);
+// sentenceHTML.textContent = languagesSentence;
 
-// Example of POST REQUEST
-// fetch(URL, {
-//     method: "POST",
-//     body: JSON.stringify(data),
-//   }).then(...).then(...)
+//
+//
+// MAPS SECTION
+//
+//
 
-// fetch("https://api.jokes.one/jod")
-//   .then((response) => response.json())
-//   .then((data) => {
-//     const jokeOfTheDay = document.getElementById("jokeOfTheDay");
-//     jokeOfTheDay.textContent = data.contents.jokes[0].joke.text;
-//     console.log(jokeOfTheDay);
-//     console.log(data.contents.jokes[0].joke.text);
+const mainMap = document.getElementById("mainMap");
+const previousButton = document.getElementById("previousButton");
+const nextButton = document.getElementById("nextButton");
 
-//     const splitter = "A:";
-//     const jokeArray = data.contents.jokes[0].joke.text.split(splitter);
+let counter = 0;
 
-//     console.log(jokeArray[0]);
-//     console.log(splitter + jokeArray[1]);
-//   });
+const arrayOfMaps = [
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108169.74093131749!2d34.72720550424106!3d32.088057675207395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4ca6193b7c1f%3A0xc1fb72a2c0963f90!2sTel%20Aviv-Yafo!5e0!3m2!1sen!2sil!4v1657560255980!5m2!1sen!2sil",
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387190.2798991042!2d-74.25987062089825!3d40.697670066303914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sil!4v1657560727718!5m2!1sen!2sil",
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d182321.80597958053!2d25.80754540123156!3d44.437711384926274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1f93abf3cad4f%3A0xac0632e37c9ca628!2sBucharest%2C%20Romania!5e0!3m2!1sen!2sil!4v1657560676957!5m2!1sen!2sil",
+];
 
-// console.log(window.location);
+const moveBack = () => {
+  if (counter !== 0) {
+    counter--;
+    mainMap.src = arrayOfMaps[counter];
+  }
 
-const NORRIS_URL = "https://api.chucknorris.io/jokes/";
+  nextButton.disabled = false;
+  nextButton.classList.add("enabled");
+  nextButton.classList.remove("disabled");
 
-const selectCategory = (e) => {
-  console.log(e.target.textContent);
-  const categoryName = e.target.textContent;
-  // https://api.chucknorris.io/jokes/random?category=career
-  fetch(NORRIS_URL + "random?category=" + categoryName)
-    .then((response) => response.json())
-    .then((data) => {
-      const displayJoke = document.getElementById("displayJoke");
-      console.log(displayJoke);
-      // console.log(data);
-      console.log(data.value);
+  if (counter === 0) {
+    previousButton.disabled = true;
+    previousButton.classList.add("disabled");
+    previousButton.classList.remove("enabled");
+  }
 
-      const categoryTitle = document.createElement("a");
-      categoryTitle.href = "./html/category.html?search=" + categoryName;
-      categoryTitle.textContent = categoryName;
-      displayJoke.append(categoryTitle);
-
-      const jokeText = document.createElement("div");
-      jokeText.textContent = data.value;
-      displayJoke.append(jokeText);
-
-      // How to remove a nested element from the dom
-      // Dom built-in method example remove javascript
-    });
+  console.log(counter);
 };
 
-// const NORRIS_URL = "https://api.chucknorris.io/jokes/categories";
-fetch(NORRIS_URL + "categories")
-  .then((response) => response.json())
-  .then((data) => {
-    const jokeCategories = document.getElementById("jokeCategories");
-    // console.log(jokeCategories);
-    // console.log(data);
-    for (let i = 0; i < data.length; i++) {
-      const category = document.createElement("div");
-      category.textContent = data[i];
-      // console.log(category);
-      category.value = "something that the user doesn't see";
-      category.classList.add("category-button");
-      category.addEventListener("click", selectCategory);
-      jokeCategories.append(category);
-    }
-  });
+const moveForward = () => {
+  if (counter !== arrayOfMaps.length - 1) {
+    counter++;
+    mainMap.src = arrayOfMaps[counter];
+  }
+
+  previousButton.disabled = false;
+  previousButton.classList.add("enabled");
+  previousButton.classList.remove("disabled");
+
+  if (counter === arrayOfMaps.length - 1) {
+    nextButton.disabled = true;
+    nextButton.classList.add("disabled");
+    nextButton.classList.remove("enabled");
+  }
+  console.log(counter);
+};
+
+console.log(previousButton, nextButton);
+
+previousButton.addEventListener("click", moveBack);
+nextButton.addEventListener("click", moveForward);
